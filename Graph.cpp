@@ -1,4 +1,4 @@
-// Graph.cpp: определяет точку входа для консольного приложения.
+// Graph.cpp: Г®ГЇГ°ГҐГ¤ГҐГ«ГїГҐГІ ГІГ®Г·ГЄГі ГўГµГ®Г¤Г  Г¤Г«Гї ГЄГ®Г­Г±Г®Г«ГјГ­Г®ГЈГ® ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГї.
 //
 #include "stdafx.h"
 #include <iostream>
@@ -16,7 +16,7 @@
  
 using namespace std;
  
-class RepresType { // вспомогательный класс для представления графа
+class RepresType { // ГўГ±ГЇГ®Г¬Г®ГЈГ ГІГҐГ«ГјГ­Г»Г© ГЄГ«Г Г±Г± Г¤Г«Гї ГЇГ°ГҐГ¤Г±ГІГ ГўГ«ГҐГ­ГЁГї ГЈГ°Г ГґГ 
 protected:
     int vertex_num = 0;
     bool weighted;
@@ -38,7 +38,7 @@ struct Edge {
     int cap;
 };
  
-vector<string> SplitingTheString(string str, char symbol) { // разбиение строки в вектор по символу symbol
+vector<string> SplitingTheString(string str, char symbol) { // Г°Г Г§ГЎГЁГҐГ­ГЁГҐ Г±ГІГ°Г®ГЄГЁ Гў ГўГҐГЄГІГ®Г° ГЇГ® Г±ГЁГ¬ГўГ®Г«Гі symbol
     vector<string> string_result;
     string curent_string = "";
     for (int i = 0; i < str.size(); i++) {
@@ -55,7 +55,7 @@ vector<string> SplitingTheString(string str, char symbol) { // разбиение строки 
     return string_result;
 }
  
-class DSU { // Система непересекающихся множеств
+class DSU { // Г‘ГЁГ±ГІГҐГ¬Г  Г­ГҐГЇГҐГ°ГҐГ±ГҐГЄГ ГѕГ№ГЁГµГ±Гї Г¬Г­Г®Г¦ГҐГ±ГІГў
 private:
     int size = 0;
     vector <int> rank;
@@ -927,7 +927,7 @@ public:
  
     Graph getSpaingTreeBoruvka() {
         this->transformToListOfEdges();
-        vector <tuple<int, int, int>> minimalSpanningTree = reinterpret_cast<ListOfEdgesGraph*>(repres)->getSpaingTreeKruscal();
+        vector <tuple<int, int, int>> minimalSpanningTree = reinterpret_cast<ListOfEdgesGraph*>(repres)->getSpaingTreeBoruvka();
         Graph* spaingTree = new Graph();
         spaingTree->repres = new ListOfEdgesGraph(minimalSpanningTree, repres->GetInfo());
         return *spaingTree;
