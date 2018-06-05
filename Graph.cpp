@@ -1,4 +1,4 @@
-// Graph.cpp: ���������� ����� ����� ��� ����������� ����������.
+// Graph.cpp: îïðåäåëÿåò òî÷êó âõîäà äëÿ êîíñîëüíîãî ïðèëîæåíèÿ.
 //
 #include "stdafx.h"
 #include <iostream>
@@ -16,7 +16,11 @@
  
 using namespace std;
  
+<<<<<<< HEAD
 class RepresType { 
+=======
+class RepresType { // âñïîìîãàòåëüíûé êëàññ äëÿ ïðåäñòàâëåíèÿ ãðàôà
+>>>>>>> 88dc5c9b05bf5f43918d967f4b3d67df8f88ebd1
 protected:
     int vertex_num = 0;
     bool weighted;
@@ -38,7 +42,11 @@ struct Edge {
     int cap;
 };
  
+<<<<<<< HEAD
 vector<string> SplitingTheString(string str, char symbol) {
+=======
+vector<string> SplitingTheString(string str, char symbol) { // ðàçáèåíèå ñòðîêè â âåêòîð ïî ñèìâîëó symbol
+>>>>>>> 88dc5c9b05bf5f43918d967f4b3d67df8f88ebd1
     vector<string> string_result;
     string curent_string = "";
     for (int i = 0; i < str.size(); i++) {
@@ -55,7 +63,11 @@ vector<string> SplitingTheString(string str, char symbol) {
     return string_result;
 }
  
+<<<<<<< HEAD
 class DSU {
+=======
+class DSU { // Ñèñòåìà íåïåðåñåêàþùèõñÿ ìíîæåñòâ
+>>>>>>> 88dc5c9b05bf5f43918d967f4b3d67df8f88ebd1
 private:
     int size = 0;
     vector <int> rank;
@@ -763,7 +775,7 @@ public:
  
     Graph getSpaingTreeBoruvka() {
         this->transformToListOfEdges();
-        vector <tuple<int, int, int>> minimalSpanningTree = reinterpret_cast<ListOfEdgesGraph*>(repres)->getSpaingTreeKruscal();
+        vector <tuple<int, int, int>> minimalSpanningTree = reinterpret_cast<ListOfEdgesGraph*>(repres)->getSpaingTreeBoruvka();
         Graph* spaingTree = new Graph();
         spaingTree->repres = new ListOfEdgesGraph(minimalSpanningTree, repres->GetInfo());
         return *spaingTree;
